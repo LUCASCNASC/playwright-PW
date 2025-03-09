@@ -16,8 +16,6 @@ export async function validateUrlAposLogin(page) {
 }
 
 //validar título da página após logarmos no pedido web - título da aba do navegador
-Cypress.Commands.add('tituloPagina', (username, password) => {
-
-cy.title()
-    .should('eq', 'Sabium Mobile') //Validando título da página
-});
+export async function login(page) {
+    await expect(page).toHaveTitle('Sabium Mobile');
+}
