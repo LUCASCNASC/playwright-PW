@@ -34,8 +34,6 @@ describe('Usuário inativo', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
-        Login.iconeOlhosSenha()
-        Login.botaoEsqueceuSenha()
         Login.botaoEntrarHabilitado()
         Login.clicarBotaoEntrar()
 

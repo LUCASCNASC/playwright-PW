@@ -10,9 +10,6 @@ describe('Senha do usuário expirada', () => {
         cy.clearAllSessionStorage()
         cy.urlAposLogin()
         cy.tituloPagina()
-        Login.logoEmpresaLogin()
-        Login.iconeComputadorLogin()
-        Login.usuarioTextoIcone()
     })
 
     it('1. Tentar logar com usuário com senha do usuário expirada', () => {
@@ -35,11 +32,8 @@ describe('Senha do usuário expirada', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
-        Login.iconeOlhosSenha()
-        Login.botaoEsqueceuSenha()
         Login.botaoEntrarHabilitado()
         Login.clicarBotaoEntrar()
-        Login.mensagemEntrandoSistema()
 
         //Mensagem "Seu acesso ao sistema expirou."
         cy.get('.md-dialog-content-body')

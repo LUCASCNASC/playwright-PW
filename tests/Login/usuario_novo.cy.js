@@ -3,6 +3,7 @@ import { Login } from '../../../pages/para_logins/para_login'
 const usunovo = "testtest"; //494
 const senhausunovo = "!MV87gsp";
 const novasenha = "321@Teste";
+
 describe('Logar com novo usuário', () => {
 
     beforeEach(() => {
@@ -35,8 +36,6 @@ describe('Logar com novo usuário', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
-        Login.iconeOlhosSenha()
-        Login.botaoEsqueceuSenha()
         Login.botaoEntrarHabilitado()
         Login.clicarBotaoEntrar()
 
@@ -228,8 +227,6 @@ describe('Logar com novo usuário', () => {
             .invoke('attr', 'placeholder')
             .should('equal', 'Informe sua senha')
 
-        Login.iconeOlhosSenha()
-        Login.botaoEsqueceuSenha()
         Login.botaoEntrarHabilitado()
         Login.clicarBotaoEntrar()
 

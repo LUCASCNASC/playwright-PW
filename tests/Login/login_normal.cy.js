@@ -13,9 +13,6 @@ describe('Login caminho feliz - usuário normal senha liberada', () => {
         cy.clearAllSessionStorage()
         cy.urlAposLogin()
         cy.tituloPagina()
-        Login.logoEmpresaLogin()
-        Login.iconeComputadorLogin()
-        Login.usuarioTextoIcone()
     })
 
     context('Usuário contexto 1', () => {

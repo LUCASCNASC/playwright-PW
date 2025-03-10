@@ -3,6 +3,7 @@ import { Login } from '../../../pages/para_logins/para_login'
 const usuSabiumAutomacao = "usu.expiradosenha"; //usuário 415
 const senhaautomacao = "123.automacao";
 const novasenha = "123.novasenha";
+
 describe('Senha do usuário expirada', () => {
 
     beforeEach(() => {
@@ -10,9 +11,6 @@ describe('Senha do usuário expirada', () => {
         cy.clearAllSessionStorage()
         cy.urlAposLogin()
         cy.tituloPagina()
-        Login.logoEmpresaLogin()
-        Login.iconeComputadorLogin()
-        Login.usuarioTextoIcone()
     })
 
     context('Tentar login quando a senha já está expirada', () => {
@@ -37,8 +35,6 @@ describe('Senha do usuário expirada', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
 
-            Login.iconeOlhosSenha()
-            Login.botaoEsqueceuSenha()
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
             Login.messSenhaUsuarioExpirada()
@@ -163,11 +159,8 @@ describe('Senha do usuário expirada', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
 
-            Login.iconeOlhosSenha()
-            Login.botaoEsqueceuSenha()
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
-            Login.messSenhaUsuarioExpirada()
 
             //Card Altere Sua Senha Temporária - título "Altere Sua Senha Temporária"
             cy.get('p')
@@ -301,11 +294,8 @@ describe('Senha do usuário expirada', () => {
                     .invoke('attr', 'placeholder')
                     .should('equal', 'Informe sua senha')
         
-                Login.iconeOlhosSenha()
-                Login.botaoEsqueceuSenha()
                 Login.botaoEntrarHabilitado()
                 Login.clicarBotaoEntrar()
-                Login.mensagemEntrandoSistema()
         
                 Login.expiraAcessoCardValidar() //APÓS LOGAR
         
@@ -337,12 +327,9 @@ describe('Senha do usuário expirada', () => {
                 .type(novasenha)
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
-    
-            Login.iconeOlhosSenha()
-            Login.botaoEsqueceuSenha()
+
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
-            Login.mensagemEntrandoSistema()
     
             Login.expiraAcessoCardValidar() //APÓS LOGAR
             Login.clicarSIMExpira() //clicar SIM 
@@ -467,11 +454,8 @@ describe('Senha do usuário expirada', () => {
                 .invoke('attr', 'placeholder')
                 .should('equal', 'Informe sua senha')
     
-            Login.iconeOlhosSenha()
-            Login.botaoEsqueceuSenha()
             Login.botaoEntrarHabilitado()
             Login.clicarBotaoEntrar()
-            Login.mensagemEntrandoSistema()
     
             //APÓS LOGAR
             Login.expiraAcessoCardValidar()
