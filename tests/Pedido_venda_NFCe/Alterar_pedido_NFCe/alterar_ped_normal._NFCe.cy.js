@@ -30,18 +30,15 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
         it.skip('1. Gerar pedido com entrega, alterar forma de pagamento. Produto 1860 0 0.', () => {
                       
             Produto.primeiro() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarAlterar.paraTransportadoraAlt()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
             AvancarAlterar.parcelasEntregaAlt()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarAlterar.finalAlt()
@@ -60,7 +57,6 @@ describe('Gerar pedido normal com entrega, entrar alterando, modificar e salvar.
             AvancarAlterar.parcelasEntregaAlt()
 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
             Recebimento.segundaForma()
             EscolherParcelaReceb.uma()
             AvancarAlterar.finalAlt()

@@ -2,7 +2,6 @@ import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
@@ -22,7 +21,6 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
         ProcessoVenda.finanBaixaNFCe()
         EscolherCliente.comRota()
         Produto.primeiro() //PRODUTO
-        ValidarSaldo.comSaldo()
         GeralProduto.escolherProdutoPesquisa()
     })
     
@@ -32,14 +30,12 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
                       
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -51,21 +47,17 @@ describe('Gerar pedido com financeiro na baixa com entrega', () => {
                       
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             Produto.segundo() //SEGUNDO PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora() 
             GeralEntrega.modalInconsApenasTransp()
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()

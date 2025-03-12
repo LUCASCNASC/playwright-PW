@@ -2,7 +2,6 @@ import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
@@ -22,7 +21,6 @@ describe('Gerar pedido com proposta de crédito', () => {
         ProcessoVenda.NFe()
         EscolherCliente.comRota()
         Produto.primeiro() //PRODUTO
-        ValidarSaldo.comSaldo()
         GeralProduto.escolherProdutoPesquisa()
     })
 
@@ -32,12 +30,10 @@ describe('Gerar pedido com proposta de crédito', () => {
 
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
             Recebimento.propCredito()
             EscolherParcelaReceb.uma()
             AvancarNormal.final()

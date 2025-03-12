@@ -3,7 +3,6 @@ import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.
 import { GeralMuitosPrd } from '../../../../pages/para_pedidos/ped_muitos_produtos/geral_muitos_produtos.js'
 import { AddMuitosProdutos } from '../../../../pages/para_pedidos/ped_muitos_produtos/produtos_muitos_produtos.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
 import { TirarEntrega } from '../../../../pages/para_pedidos/entrega/tirar_entrega.js'

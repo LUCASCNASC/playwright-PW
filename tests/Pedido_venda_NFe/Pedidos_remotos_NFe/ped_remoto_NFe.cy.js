@@ -1,6 +1,5 @@
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
@@ -29,17 +28,14 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it.skip('1. Ped venda remota: produto 1860 0 0 - (Venda remota de produto com saldo na filial do faturamento )', () => {
 
             Produto.primeiro() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto()
             GeralPedido.trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVIÇOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -51,25 +47,20 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it.skip('2. Ped venda remota: produtos 1860 0 0 e 1870 0 0', () => {
 
             Produto.primeiro() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto()
             GeralPedido.trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVIÇOS
             Servico.clicarOKServVinc()
             Produto.segundo() //SEGUNDO PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto()
             GeralPedido.trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVIÇOS - SEGUNDO PRODUTO
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -81,18 +72,15 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it.skip('3. Ped venda remota: kit 1877 0 0', () => {
 
             Produto.kitRemoto()
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto()
             GeralPedido.trocarFilialFaturamento()
             GeralPedido.composicaoDesteKit()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVIÇOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -107,17 +95,14 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it.skip('4. Ped venda remoto - com saldo no CD (filial 1) - deve permitir fazer o pedido - (Venda remota de produto sem saldo na filial do faturamento, mas com saldo no CD do faturamento - com entrega)', () => {
 
             Produto.remotoComCD() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto()
             GeralPedido.trocarFilialFaturamento()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVIÇOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -129,7 +114,6 @@ describe('Remoto/processo 9860 - Regra de saldo Parâmetro 36 = 4 - Parâmetro 1
         it.skip('5. Ped venda remoto - SEM saldo no CD (filial 1) - NÃO deve permitir fazer o pedido - (Venda remota de produto sem saldo na filial do faturamento, sem saldo da CD do faturamento)', () => {
 
             Produto.remotoSemCD() //PRODUTO
-            ValidarSaldo.semSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto()
             GeralPedido.trocarFilialFaturamento()

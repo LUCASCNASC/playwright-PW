@@ -2,7 +2,7 @@ import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
+
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
@@ -23,11 +23,9 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
         ProcessoVenda.NFCe()
         EscolherCliente.comRota()
         Produto.primeiro() //PRODUTO
-        ValidarSaldo.comSaldo()
         GeralProduto.escolherProdutoPesquisa()
         GeralProduto.clicarVoltagemProduto() //PRODUTO
         GeralProduto.clicarAdicionarProduto()
-        Servico.validarModalServVinc() //SERVICOS
     })   
 
     context('Com entrega/processo 9890 - caminho feliz', () => {
@@ -41,7 +39,6 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -54,18 +51,15 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Servico.garantiaSepMesmoProc() //Marcar garantia "T.A. Garantia Separa Mesmo Processo"
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -82,7 +76,6 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -95,18 +88,15 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Servico.garantiaNaoSep() //Marcar garantia "T.A. Garantia Não Separa"
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -123,7 +113,6 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -136,18 +125,15 @@ describe('Gerar pedidos com Garantia e com entrega', () => {
             Servico.garantiaSepTituloProcDif() //Marcar Garantia separa titulo em um processo diferente
             Servico.clicarOKServVinc() //SERVIÇOS
             Produto.segundo() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
             GeralEntrega.escolherTransportadora()
             AvancarNormal.parcelasEntrega()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()

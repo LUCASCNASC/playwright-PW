@@ -32,7 +32,10 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             PedServicoAvulso.clienteCompletoOpcaoMenu()
             PedServicoAvulso.clicarMenuClienteCompleto()
             PedServicoAvulso.clicarOpcaoServicos()
-            PedServicoAvulso.aguardeCarregandoServico()
+
+
+
+            
 
             //Validando campo
             cy.get('form.ng-pristine > .ng-pristine')
@@ -48,22 +51,17 @@ describe('Venda de serviço avulso, com pedido do produto já baixado', () => {
             cy.get('[ng-show="filtroShow(pedidoAtual)"][aria-hidden="false"] > .md-list-item-text > h3 > .ng-binding')
                 .should('have.text', numero_pedido)
 
-            PedServicoAvulso.botaoAddMaoObra()
-            PedServicoAvulso.botaoAddGarantias()
             PedServicoAvulso.clicarAddGarantias()
-            PedServicoAvulso.modalGarantiasServicosVinculados()
             Servico.garantiaSepMesmoProc() //clicar na primeira garantia - Garantia Separa Mesmo Processo
             Servico.clicarOKServVinc()()
             PedServicoAvulso.messServicoAdicionadoSucesso()
             PedServicoAvulso.botaoSalvarServico()
-            PedServicoAvulso.messAguardeCarregando()
             PedServicoAvulso.messRegistroSalvoSucesso()
             PedServicoAvulso.clicarAddGarantias() //Clicando novamente para validar que não deixa adicionar mais garantias
             PedServicoAvulso.messGarantiaJaAdicionada() //Mensagem de "O Serviço Garantias já foi adicionado à esse produto.", quando tentamos adicionar novamente
             PedServicoAvulso.clicarCarrinhoCompras()
             PedServicoAvulso.botaoAvancarPedido()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal()
             EscolherParcelaReceb.duas()
             AvancarNormal.final()

@@ -2,7 +2,6 @@ import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
@@ -22,7 +21,6 @@ describe('Gerar pedido de entrega futura', () => {
         ProcessoVenda.entregaFutNFe()
         EscolherCliente.comRota()
         Produto.primeiro() //PRODUTO
-        ValidarSaldo.comSaldo()
         GeralProduto.escolherProdutoPesquisa()
     })
 
@@ -32,12 +30,10 @@ describe('Gerar pedido de entrega futura', () => {
                       
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA PRODUTO
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -49,20 +45,16 @@ describe('Gerar pedido de entrega futura', () => {
                       
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             clicarOKServVinServico.clicarOKServVincculado()
             TirarEntrega.primeiro() //ENTREGA PRODUTO
             Produto.segundo() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarNormal.final() 
@@ -77,12 +69,10 @@ describe('Gerar pedido de entrega futura', () => {
                       
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento()
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarNormal.final()
@@ -94,19 +84,15 @@ describe('Gerar pedido de entrega futura', () => {
                       
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             Produto.segundo() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora() //TRANSPORTADORA
             AvancarNormal.paraParcelas() 
             GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            GeralPagamento.carregandoFormaPagamento() 
             Recebimento.principal() //PROCESSO INCLUSÃO
             EscolherParcelaReceb.duas()
             AvancarNormal.final() 

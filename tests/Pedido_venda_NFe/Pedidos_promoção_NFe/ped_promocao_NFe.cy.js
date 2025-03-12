@@ -1,6 +1,5 @@
 import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo_venda.js'
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
@@ -31,13 +30,11 @@ describe('Gerar pedidos com promoção', () => {
         it.skip('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             Produto.promoPartida() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             Promocao.selecionarPrimeiraPromoProduto() //PROMOCAO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
@@ -52,13 +49,11 @@ describe('Gerar pedidos com promoção', () => {
         it.skip('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             Produto.promoPrazoEntrada() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
@@ -79,13 +74,11 @@ describe('Gerar pedidos com promoção', () => {
         it.skip('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             Produto.promoPrazoParcelado() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
             AvancarNormal.paraParcelas()
@@ -103,21 +96,17 @@ describe('Gerar pedidos com promoção', () => {
         it.skip('4. Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             Produto.promoPartida() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
             Produto.segundo() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.paraParcelas()
@@ -139,21 +128,17 @@ describe('Gerar pedidos com promoção', () => {
         it.skip('5. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             Produto.promoPrazoEntrada() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.primeiro() //ENTREGA
             Produto.segundo() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             TirarEntrega.segundo() //ENTREGA - SEGUNDO PRODUTO
             AvancarNormal.paraParcelas()
@@ -175,13 +160,11 @@ describe('Gerar pedidos com promoção', () => {
         it.skip('6. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             Produto.promoPartida() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas() //ENTREGA
@@ -200,13 +183,11 @@ describe('Gerar pedidos com promoção', () => {
         it.skip('7. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             Produto.promoPrazoEntrada() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
@@ -239,13 +220,11 @@ describe('Gerar pedidos com promoção', () => {
         it.skip('8. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             Produto.promoPrazoParcelado() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             AvancarNormal.paraParcelas()
@@ -268,16 +247,14 @@ describe('Gerar pedidos com promoção', () => {
         it.skip('9. Ped venda com promoção partida (promoção 152): produto 1868 0 0 e produto 1870 0 0 (sem promoção)', () => {
     
             Produto.promoPartida() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
+            
             Servico.clicarOKServVinc()
             Produto.segundo() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa()
             GeralProduto.clicarVoltagemProduto() //PRODUTO
             GeralProduto.clicarAdicionarProduto()

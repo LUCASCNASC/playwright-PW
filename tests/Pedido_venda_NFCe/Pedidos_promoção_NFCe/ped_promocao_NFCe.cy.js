@@ -2,7 +2,6 @@ import { ProcessoVenda } from '../../../../pages/para_pedidos/processos/processo
 import { EscolherCliente } from '../../../../pages/para_pedidos/cliente/cliente.js'
 import { Produto } from '../../../../pages/produtos/prd_normal.js'
 import { GeralProduto } from '../../../../pages/produtos/gerais_pedido.js'
-import { ValidarSaldo } from '../../../../pages/para_pedidos/saldo/validar_saldo.js'
 import { Servico } from '../../../../pages/para_pedidos/servicos/valida_servicos_adicionados.js'
 import { AvancarNormal } from '../../../../pages/para_pedidos/botoes/avancar/avancar_normal.js'
 import { FinalizarPed } from '../../../../pages/para_pedidos/finalizar_pedido.js'
@@ -29,13 +28,11 @@ describe('Gerar pedidos com promoção com entrega', () => {
         it.skip('1. Ped venda com promoção partida (promoção 152): produto 1868 0 0', () => {
     
             Produto.promoPartida() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao() 
             GeralProduto.clicarVoltagemProduto()
             Promocao.selecionarPrimeiraPromoProduto()
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
@@ -57,13 +54,11 @@ describe('Gerar pedidos com promoção com entrega', () => {
         it.skip('2. Ped venda com promoção a prazo com entrada (promoção 150): produto 1866 0 0', () => {
     
             Produto.promoPrazoEntrada() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao() 
             GeralProduto.clicarVoltagemProduto()
             Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
@@ -77,7 +72,6 @@ describe('Gerar pedidos com promoção com entrega', () => {
             // cy.contains('3861 - T.A. A Receber A Vista').click({force:true})
 
             // GeralPagamento.clicarGerarParcelas() //GERAR PARCELAS
-            // GeralPagamento.carregandoFormaPagamento()
             // Recebimento.principal()()
             // EscolherParcelaReceb.duas()
             // AvancarNormal.final()
@@ -89,13 +83,11 @@ describe('Gerar pedidos com promoção com entrega', () => {
         it.skip('3. Ped venda com promoção a prazo parcelado (promoção 151): produto 1867 0 0', () => {
     
             Produto.promoPrazoParcelado() //PRODUTO
-            ValidarSaldo.comSaldo()
             GeralProduto.escolherProdutoPesquisa() ; Promocao.ticketPromocao()
             GeralProduto.clicarVoltagemProduto()
             Promocao.selecionarPrimeiraPromoProduto() //PROMOÇÃO
             RecebimentoPromo.pagPrincipal()
             GeralProduto.clicarAdicionarProduto()
-            Servico.validarModalServVinc() //SERVICOS
             Servico.clicarOKServVinc()
             AvancarNormal.paraTransportadora()
             GeralEntrega.modalInconsApenasTransp() //ESCOLHER TRANSPORTADORA
